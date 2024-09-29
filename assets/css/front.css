@@ -1,0 +1,260 @@
+@import url('https://font.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&dispaly=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    z-index: 1000;
+}
+footer
+{
+    position: relative;
+    background-color: #111;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 55px 100px;
+    z-index: 1000;
+
+}
+footer p
+{
+    display: block;
+    color: #fff;
+    font-size: 1em;
+    margin: 5px 0 25px;
+    
+}
+
+
+header .logo
+{
+    position: relative;
+    font-size: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+header .logo span
+{
+    color: #c00b0b;
+}
+header .toggle
+{
+    max-width: 60px;
+    cursor: pointer;
+}
+header .toggle img
+{
+    max-width: 100%;
+}
+.banner
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    background: #111;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.banner:before
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background: #c00b0b;
+    transform-origin: top;
+    transform: skew(-25deg);
+    z-index: 1;
+}
+.banner video
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    pointer-events: none;
+}
+.banner .textBox
+{
+    position: relative;
+    max-width: 600px;
+    z-index: 2;
+}
+.banner .textBox h2
+{
+    color: #fff;
+    font-size: 3em;
+}
+.banner .textBox p
+{
+    color: #fff;
+    font-size: 1.1em;
+    margin: 5px 0 25px;
+}
+.banner .textBox a
+{
+    /* Inline-block anchor */
+    position: relative;
+    display: inline-block;
+
+    /* Background color, text color */
+    background: #fff;
+    color: #111;
+
+    /* Padding for space around text */
+    padding: 15px 25px;
+
+    /* Remove underline, pointer cursor */
+    text-decoration: none;
+    cursor: pointer;
+
+    /* Font size, style, weight */
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.middle
+{
+    position: relative;
+}
+.btn
+{
+    background: #c00b0b;
+    border: 2px solid #000;
+    font-family: "montserrat",sans-serif;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    min-width: 200px;
+    margin: 10px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+}   
+.btn:hover
+{
+    color: #c00b0b;
+    background: #000;
+}
+.btn::before
+{
+    content: "";
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+}
+.btn1::before
+{
+    transform: scaleX(0); 
+}
+.btn1:hover::before
+{
+    transform: scaleX(1);
+}
+.banner .imgBox
+{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    z-index: 2;
+}
+.banner .imgBox img
+{
+    position: absolute;
+    bottom: 0;
+    height: 90%;
+    z-index: 10000;
+}
+.sci
+{
+    position: absolute;
+    bottom: 20px;
+    letter-spacing: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sci li
+{
+    list-style: none;
+
+}
+.sci li a
+{
+    display: inline-block;
+    margin-right: 20px;
+}
+.sci li a img
+{
+    transform: scale(0.7);
+    filter: invert(1);
+}
+.sci li a img:hover
+{
+    color: #c00b0b;
+}
+
+@media (max-width: 991px)
+{
+    header 
+    {
+        padding: 20px 50px;
+    }
+    .banner
+    {
+        padding: 150px 50px 0;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .banner:before 
+    {
+        width: 300px;
+        transform: skew(-25deg) translateX(50%);
+    }
+    .banner .textBox 
+    {
+        max-width: 100%;
+    }
+    .sci 
+    {
+        z-index: 1000;
+        right: initial;
+        left: 20px;
+        flex-direction: column;
+    }
+}
